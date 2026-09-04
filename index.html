@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>meridian — Brand Book</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --vanilla:#F4EADB; --paper:#FBF6EE; --sand:#CDB89F; --caramel:#A8763E; --moss:#6E7436;
+  --bark:#5C4634; --eco:#44B24B; --ink:#2A2622; --mid:#7A6F63; --line:rgba(42,38,34,.14);
+  --signal:#2FA44A;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--vanilla)}
+body{background:var(--vanilla);color:var(--ink);font-family:'Inter',ui-sans-serif,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;padding:28px 0}
+img{display:block;max-width:100%}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+.mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;letter-spacing:.02em}
+
+/* one page = one topic; as tall as what is on it */
+.page{width:min(1400px,94vw);margin:0 auto 26px;background:var(--paper);
+  display:grid;grid-template-columns:20% 1fr;grid-template-rows:1fr auto;
+  padding:44px 46px 0;position:relative;overflow:hidden;border:1px solid var(--line)}
+.page.fill{aspect-ratio:16/9}
+.col{padding-right:30px}
+.col h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;letter-spacing:-.01em;
+  line-height:1;margin-bottom:12px}
+.col p{font-size:11.5px;line-height:1.6;color:var(--mid);max-width:30ch;margin-bottom:9px}
+.col p b{color:var(--ink);font-weight:500}
+.col .note{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.02em;color:var(--signal);
+  border-left:2px solid var(--eco);padding-left:9px;margin-top:12px}
+.col .dl{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--caramel);margin-top:14px}
+.body{min-width:0;display:flex;flex-direction:column}
+.foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--line);margin-top:26px;padding:12px 0 16px;
+  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--mid)}
+.foot .l{display:flex;align-items:center;gap:12px}
+.foot .l b{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:15px;letter-spacing:0;color:var(--ink)}
+
+.tiles{display:grid;gap:12px;flex:1;min-height:0}
+.tile{background:var(--vanilla);display:grid;place-items:center;overflow:hidden;position:relative;
+  text-decoration:none;color:inherit}
+a.tile:hover{box-shadow:0 0 0 2px var(--caramel)}
+.tile img.fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cap{position:absolute;left:10px;bottom:8px;font-family:'JetBrains Mono',monospace;font-size:8.5px;
+  letter-spacing:.1em;color:var(--ink);background:rgba(251,246,238,.82);padding:3px 6px}
+.tile.dark .cap{background:rgba(42,38,34,.7);color:var(--vanilla)}
+
+/* cover */
+.cover{padding:0;grid-template-columns:1fr;grid-template-rows:1fr;border:0}
+.cover .art{position:relative;width:100%;aspect-ratio:16/9;min-height:clamp(300px,46vw,760px);overflow:hidden;background:var(--sand)}
+.cover .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .word{position:absolute;left:clamp(28px,4.2vw,64px);bottom:clamp(60px,9vw,130px);z-index:2;
+  font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(64px,13vw,210px);line-height:.85;
+  letter-spacing:-.03em;color:var(--ink)}
+.cover .sub{position:absolute;left:clamp(28px,4.2vw,64px);bottom:clamp(26px,3vw,44px);z-index:2;display:flex;gap:clamp(16px,2.4vw,36px);
+  font-family:'JetBrains Mono',monospace;font-size:clamp(8px,.75vw,10px);letter-spacing:.16em;color:var(--ink)}
+.cover .sub i{font-style:normal;color:var(--mid)}
+
+/* swatches */
+.swatches{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;align-content:start}
+.sw .chip{height:120px;border:1px solid var(--line)}
+.sw b{display:block;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:15px;margin:9px 0 4px}
+.sw table{width:100%;border-collapse:collapse}
+.sw td{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--mid);padding:1px 0}
+.sw td:first-child{color:var(--ink);width:34px}
+
+/* type */
+.typespec{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.face{background:var(--vanilla);padding:18px 20px;min-width:0}
+.fname{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;
+  font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;color:var(--mid)}
+.fname b{font-family:'Inter',sans-serif;font-weight:500;font-size:12px;letter-spacing:0;color:var(--ink)}
+.fsample{font-size:clamp(28px,3.4vw,52px);line-height:1;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px;overflow-wrap:anywhere}
+.fsample.in{font-family:'Inter',sans-serif;font-size:clamp(15px,1.5vw,20px);line-height:1.35;letter-spacing:-.005em;font-weight:400}
+.fsample.mo{font-family:'JetBrains Mono',monospace;font-size:clamp(11px,1.1vw,14px);line-height:1.5;letter-spacing:0;color:var(--signal)}
+.wts{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--mid);letter-spacing:.06em}
+.scale{width:100%;border-collapse:collapse;margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:9px}
+.scale th{text-align:left;color:var(--mid);font-weight:500;letter-spacing:.12em;font-size:7.5px;padding:0 0 5px;border-bottom:1px solid var(--line)}
+.scale td{padding:4px 0;color:var(--mid);border-bottom:1px solid var(--line)}
+.scale td:first-child{color:var(--ink)}
+.scale td.s{font-family:'Instrument Serif',Georgia,serif;font-size:14px;color:var(--ink)}
+
+/* wordmark page */
+.wm{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;flex:1;min-height:0}
+.wm .big{background:var(--vanilla);display:grid;place-items:center;position:relative;overflow:hidden}
+.wm .big .w{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(70px,11vw,180px);letter-spacing:-.03em;line-height:.9;color:var(--ink)}
+.wm .big.inv{background:var(--ink)} .wm .big.inv .w{color:var(--vanilla)}
+.wm .stack{display:grid;grid-template-rows:1fr 1fr;gap:12px;min-height:0}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:10px}
+.rules span{display:flex;flex-direction:column;gap:3px;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--mid);padding-right:10px}
+.rules b{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;letter-spacing:0;color:var(--ink)}
+
+/* assets */
+.page.tall{aspect-ratio:auto}
+.agroup{margin-bottom:16px}
+.agroup h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:17px;margin-bottom:3px}
+.agroup>p{font-size:9.5px;line-height:1.5;color:var(--mid);margin-bottom:8px;max-width:78ch}
+.ass{display:flex;align-items:center;gap:12px;padding:6px 10px;text-decoration:none;color:inherit;
+  border:1px solid var(--line);margin-bottom:5px;background:var(--paper)}
+.ass:hover{border-color:var(--caramel)}
+.ass .th{width:52px;height:36px;flex:none;overflow:hidden;background:var(--vanilla)}
+.ass .th img{width:100%;height:100%;object-fit:cover}
+.ass .meta{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
+.ass .meta b{font-size:10.5px;font-weight:500}
+.ass .meta i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.04em;color:var(--mid)}
+.ass .dl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--caramel);flex:none}
+
+@media (max-width:900px){
+  .page{grid-template-columns:1fr;padding:26px 22px 0}
+  .col{padding-right:0;margin-bottom:18px}
+  .swatches{grid-template-columns:repeat(3,1fr)} .typespec{grid-template-columns:1fr} .wm{grid-template-columns:1fr}
+  .rules{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- cover -->
+<div class="page cover">
+  <div class="art">
+    <img src="img/web/hero-sand.jpg" alt="A meridian vial standing on raked sand in warm light">
+    <div class="word">meridian</div>
+    <div class="sub"><span>BRAND BOOK</span><i>V0.1 · SEP 2026</i><i>RESEARCH WITH HIGHER STANDARDS</i></div>
+  </div>
+</div>
+
+<!-- the idea -->
+<div class="page" id="idea">
+  <div class="col">
+    <h2>Two layers</h2>
+    <p><b>We love nature, and we can control it.</b> That sentence is the whole identity. Everything
+    meridian shows the world is a natural surface &mdash; raked sand, still water, moss on bark, a
+    dried leaf &mdash; photographed warm and calm, japandi, one product in it.</p>
+    <p><b>Under the hood is the lab.</b> Beneath every surface sits the same image rendered as
+    data: characters, dots, a grid. It appears on hover, on scroll, inside the pack, in the loading
+    state. It is never the first thing you see and it is always there.</p>
+    <p>Surface is what we sell. Under the hood is why you can trust it.</p>
+    <p class="note">$ render --surface moss --layer ascii</p>
+  </div>
+  <div class="body">
+    <div class="tiles" style="grid-template-columns:1fr 1fr;height:clamp(240px,34vw,460px)">
+      <div class="tile"><img class="fill" src="img/web/hero-moss.jpg" alt="The surface: a vial on a moss branch"><span class="cap">THE SURFACE</span></div>
+      <div class="tile"><img class="fill" src="img/web/hood-moss.jpg" alt="Under the hood: the same frame as characters"><span class="cap">UNDER THE HOOD</span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>THE IDEA</span></div>
+</div>
+
+<!-- wordmark -->
+<div class="page" id="wordmark">
+  <div class="col">
+    <h2>Wordmark</h2>
+    <p><b>meridian, lowercase, always.</b> One serif face, one weight, set tight. It is a word, not a
+    logo: no icon beside it, no box around it, no gradient in it.</p>
+    <p><b>The m is the mark.</b> On its own it is pressed, not printed &mdash; debossed into the cube,
+    blind-embossed into the paper, cut into the cap. Where it cannot be pressed it is set in ink at
+    the same weight as the wordmark, never heavier.</p>
+    <p>Clear space on every side is the width of the m. Ink on vanilla and paper; vanilla on ink and
+    bark. Never on the Ecophilia green &mdash; on that ground the product carries the name.</p>
+  </div>
+  <div class="body">
+    <div class="wm" style="height:clamp(300px,38vw,520px)">
+      <div class="big"><span class="w">meridian</span><span class="cap">INK ON VANILLA</span></div>
+      <div class="stack">
+        <div class="big inv"><span class="w" style="font-size:clamp(60px,7vw,120px)">meridian</span><span class="cap" style="background:rgba(42,38,34,.7);color:var(--vanilla)">VANILLA ON INK</span></div>
+        <div class="tile"><img class="fill" src="img/web/m-cube.jpg" alt="The m debossed into the cube"><span class="cap">THE M · PRESSED, NOT PRINTED</span></div>
+      </div>
+    </div>
+    <div class="rules">
+      <span><b>Case</b>lowercase only</span>
+      <span><b>Weight</b>one · regular</span>
+      <span><b>Clear space</b>the width of the m</span>
+      <span><b>Minimum</b>18 px · 4 mm</span>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>IDENTITY</span></div>
+</div>
+
+<!-- colour -->
+<div class="page" id="colour">
+  <div class="col">
+    <h2>Colour</h2>
+    <p><b>Six natural tones and one loud one.</b> Vanilla is the ground for almost everything. Sand
+    and caramel are what vanilla does in warm light. Moss and bark are what sits on it. Ink is the
+    only black, and it is warm.</p>
+    <p><b>Ecophilia green is the exception.</b> It is the colour of the product book and of the
+    layer under the hood, and it belongs nowhere else. It never becomes a background for the
+    wordmark and never tints a photograph.</p>
+    <p>Every value here was read off the photography, not picked from a wheel.</p>
+  </div>
+  <div class="body">
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#F4EADB"></div><b>Vanilla</b><table><tr><td>HEX</td><td>#F4EADB</td></tr><tr><td>USE</td><td>Ground</td></tr></table></div>
+      <div class="sw"><div class="chip" style="background:#CDB89F"></div><b>Sand</b><table><tr><td>HEX</td><td>#CDB89F</td></tr><tr><td>USE</td><td>Surface</td></tr></table></div>
+      <div class="sw"><div class="chip" style="background:#A8763E"></div><b>Caramel</b><table><tr><td>HEX</td><td>#A8763E</td></tr><tr><td>USE</td><td>Accent · links</td></tr></table></div>
+      <div class="sw"><div class="chip" style="background:#6E7436"></div><b>Moss</b><table><tr><td>HEX</td><td>#6E7436</td></tr><tr><td>USE</td><td>Secondary</td></tr></table></div>
+      <div class="sw"><div class="chip" style="background:#5C4634"></div><b>Bark</b><table><tr><td>HEX</td><td>#5C4634</td></tr><tr><td>USE</td><td>Dark ground</td></tr></table></div>
+      <div class="sw"><div class="chip" style="background:#2A2622"></div><b>Ink</b><table><tr><td>HEX</td><td>#2A2622</td></tr><tr><td>USE</td><td>Type</td></tr></table></div>
+      <div class="sw"><div class="chip" style="background:#44B24B"></div><b>Ecophilia</b><table><tr><td>HEX</td><td>#44B24B</td></tr><tr><td>USE</td><td>Book · hood</td></tr></table></div>
+    </div>
+    <div class="tiles" style="grid-template-columns:1fr 1fr 1fr;height:clamp(150px,20vw,270px);margin-top:16px">
+      <div class="tile"><img class="fill" src="img/web/hero-water.jpg" alt="Vanilla and sand in the water plate"><span class="cap">VANILLA · SAND</span></div>
+      <div class="tile"><img class="fill" src="img/web/hero-moss.jpg" alt="Moss and bark"><span class="cap">MOSS · BARK</span></div>
+      <div class="tile"><img class="fill" src="img/web/eco-tesa.jpg" alt="Ecophilia green"><span class="cap">ECOPHILIA · THE BOOK ONLY</span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>IDENTITY</span></div>
+</div>
+
+<!-- type -->
+<div class="page" id="type">
+  <div class="col">
+    <h2>Type</h2>
+    <p><b>Instrument Serif</b> is the voice. It is the wordmark and every headline, always lowercase
+    at display sizes, set tight, never bold and never italic for emphasis.</p>
+    <p><b>Inter</b> does the reading: body, labels, the compound name on the pack, dosage,
+    navigation. Regular and medium only.</p>
+    <p><b>JetBrains Mono</b> is under the hood. Batch numbers, lab data, the ASCII layer, captions
+    in this book. It is set in signal green when it sits on vanilla and in vanilla when it sits on
+    ink. It never carries a headline.</p>
+  </div>
+  <div class="body">
+    <div class="typespec">
+      <div class="face"><div class="fname"><b>Instrument Serif</b><span>DISPLAY</span></div>
+        <div class="fsample serif">research with higher standards.</div><div class="wts">regular · lowercase at display · tracking −20</div></div>
+      <div class="face"><div class="fname"><b>Inter</b><span>BODY</span></div>
+        <div class="fsample in">Transparent, batch-specific laboratory documentation with every vial. Compounded in the United States. Rx only.</div><div class="wts">400 · 500 · leading 1.5</div></div>
+      <div class="face"><div class="fname"><b>JetBrains Mono</b><span>UNDER THE HOOD</span></div>
+        <div class="fsample mo">batch  MRDN-3RT-0926-014<br>purity 99.4 %  hplc<br>endotoxin &lt; 0.5 EU/mg<br>sterility  pass<br>$ verify --coa 0926-014</div><div class="wts">400 · signal green on vanilla</div></div>
+    </div>
+    <table class="scale">
+      <tr><th>ROLE</th><th>FACE</th><th>SIZE</th><th>CASE</th><th>SAMPLE</th></tr>
+      <tr><td>Display</td><td>Instrument Serif</td><td>96–210</td><td>lowercase</td><td class="s">meridian</td></tr>
+      <tr><td>Headline</td><td>Instrument Serif</td><td>40–72</td><td>sentence</td><td class="s">Research with higher standards.</td></tr>
+      <tr><td>Body</td><td>Inter 400</td><td>15–18</td><td>sentence</td><td>Every vial ships with its batch documentation.</td></tr>
+      <tr><td>Label</td><td>Inter 500</td><td>11–13</td><td>as named</td><td>Compounded Semaglutide · 5 mg/2 mL</td></tr>
+      <tr><td>Data</td><td>JetBrains Mono</td><td>10–12</td><td>lowercase</td><td class="mono">purity 99.4 % · lot 0926-014</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>IDENTITY</span></div>
+</div>
+
+<!-- photography -->
+<div class="page" id="photography">
+  <div class="col">
+    <h2>Photography</h2>
+    <p><b>A real surface, warm low light, one product.</b> The ground is always a natural material
+    that has been touched by a hand: sand that has been raked, water that has been disturbed once,
+    a branch that has been cut. That is the whole brand in one picture &mdash; nature, and the
+    evidence that we shaped it.</p>
+    <p>Light is late afternoon, from the side, so the surface has grain and the product has a
+    shadow. Palette stays in the six natural tones. Nothing candid, no people, no interiors.</p>
+    <p>The product is never treated: the label reads, the cap is vanilla, nothing crosses the glass.</p>
+    <p class="dl">CLICK ANY PLATE TO DOWNLOAD</p>
+  </div>
+  <div class="body">
+    <div class="tiles" style="grid-template-columns:1fr;height:clamp(240px,34vw,470px)">
+      <a class="tile" href="img/gen/hero-sand-1.png" download><img class="fill" src="img/web/hero-sand.jpg" alt="Raked sand"><span class="cap">RAKED SAND · THE HERO</span></a>
+    </div>
+    <div class="tiles" style="grid-template-columns:1fr 1fr;height:clamp(180px,24vw,330px);margin-top:12px">
+      <a class="tile" href="img/gen/hero-water-1.png" download><img class="fill" src="img/web/hero-water.jpg" alt="Still water"><span class="cap">STILL WATER · ONE RIPPLE</span></a>
+      <a class="tile" href="img/gen/hero-moss-1.png" download><img class="fill" src="img/web/hero-moss.jpg" alt="Moss on bark"><span class="cap">MOSS ON BARK · PRODUCT</span></a>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>ART DIRECTION</span></div>
+</div>
+
+<!-- ecophilia -->
+<div class="page" id="ecophilia">
+  <div class="col">
+    <h2>Ecophilia</h2>
+    <p><b>The product book.</b> Constantin Boym&rsquo;s Ecophilia puts one found branch on one
+    flat green page and lets it be the whole page. We take the format and subvert the subject:
+    every page is a new offering, sitting on or hanging off a different piece of nature.</p>
+    <p>One product per page. One natural object per page, and never the same kind twice: lichen,
+    bark, a cut branch, a leaf, a stone. The green is flat and exact. The type, when it comes, is
+    Helvetica-plain and small, top right, the way the book does it.</p>
+    <p>This is the only place the Ecophilia green lives, and the only place the product is shown
+    on a coloured ground.</p>
+    <p class="dl">CLICK ANY PAGE TO DOWNLOAD</p>
+  </div>
+  <div class="body">
+    <div class="tiles" style="grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;height:clamp(320px,44vw,620px)">
+      <a class="tile" href="img/gen/eco-mrdn3-1.png" download><img class="fill" src="img/web/eco-mrdn3.jpg" alt="MRDN-3 RT on a lichen twig"><span class="cap">MRDN-3 RT · LICHEN</span></a>
+      <a class="tile" href="img/gen/eco-trz-1.png" download><img class="fill" src="img/web/eco-trz.jpg" alt="MRDN-TRZ in birch bark"><span class="cap">MRDN-TRZ · BIRCH BARK</span></a>
+      <a class="tile" href="img/gen/eco-tesa-1.png" download><img class="fill" src="img/web/eco-tesa.jpg" alt="Tesamorelin on a cut branch"><span class="cap">TESAMORELIN · CUT BRANCH</span></a>
+      <a class="tile" href="img/gen/eco-ghkcu-1.png" download><img class="fill" src="img/web/eco-ghkcu.jpg" alt="GHK-Cu on a dried leaf"><span class="cap">GHK-CU · MAGNOLIA LEAF</span></a>
+      <a class="tile" href="img/gen/eco-kubix.png" download><img class="fill" src="img/web/eco-kubix.jpg" alt="Kubix on a river stone"><span class="cap">KUBIX · RIVER STONE</span></a>
+      <div class="tile" style="background:#44B24B"><span class="serif" style="font-size:clamp(28px,4vw,60px);color:#FBF6EE;line-height:.9;text-align:center;padding:0 8%">one offering,<br>one branch.</span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>ART DIRECTION</span></div>
+</div>
+
+<!-- under the hood -->
+<div class="page" id="hood">
+  <div class="col">
+    <h2>Under the hood</h2>
+    <p><b>The same picture, as data.</b> Every surface photograph has a twin: the frame rendered in
+    monospace characters, signal green on vanilla, dense where the image is dark, empty where it is
+    light. It is generated from the photograph, never drawn.</p>
+    <p><b>Where it shows.</b> On hover, the surface gives way to the hood for as long as the cursor
+    stays. On scroll it runs under the hero. Inside the pack it is printed on the inner face of the
+    box. In the app it is the loading state and the lab-results view.</p>
+    <p><b>Where it never shows.</b> On the product, on the label, as a background for the wordmark,
+    or as decoration on its own. It only ever appears as the underside of a real photograph.</p>
+    <p class="note">$ hood --src hero-moss.png --cols 170 --ink 44B24B</p>
+  </div>
+  <div class="body">
+    <div class="tiles" style="grid-template-columns:1fr 1fr;height:clamp(240px,34vw,470px)">
+      <div class="tile"><img class="fill" src="img/web/hood-moss.jpg" alt="The moss hero under the hood"><span class="cap">HERO · UNDER THE HOOD</span></div>
+      <div class="tile"><img class="fill" src="img/web/hood-eco.jpg" alt="An Ecophilia page under the hood"><span class="cap">ECOPHILIA PAGE · UNDER THE HOOD</span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>SYSTEM</span></div>
+</div>
+
+<!-- packaging -->
+<div class="page" id="packaging">
+  <div class="col">
+    <h2>Packaging</h2>
+    <p><b>Not final. This is the system it will follow.</b> Two formats. The vial: clear glass,
+    a vanilla cap over a silver band, a white paper label. The cube: a warm vanilla chewable with
+    the m pressed into its face, no print on it at all.</p>
+    <p><b>The label.</b> Wordmark first, in the serif, lowercase. Then the compound in Inter medium,
+    the dose in Inter regular, the format and the Rx line small at the foot. Nothing else. No
+    icons, no colour, no pattern &mdash; the hood is printed inside the box, not on the label.</p>
+    <p>The cap is the one place colour lives on the pack, and it is vanilla on every product.
+    Offerings are told apart by the name, not by a colour code.</p>
+  </div>
+  <div class="body">
+    <div class="tiles" style="grid-template-columns:1.1fr 1fr;height:clamp(260px,36vw,500px)">
+      <div class="tile"><img class="fill" src="img/web/vial.jpg" alt="The meridian vial"><span class="cap">THE VIAL · LABEL ANATOMY</span></div>
+      <div class="tile"><img class="fill" src="img/web/m-cube.jpg" alt="The cube with the m pressed in"><span class="cap">THE CUBE · KUBIX</span></div>
+    </div>
+    <div class="rules">
+      <span><b>Line 1</b>meridian · Instrument Serif</span>
+      <span><b>Line 2</b>compound · Inter 500</span>
+      <span><b>Line 3</b>dose · Inter 400</span>
+      <span><b>Foot</b>format · Rx only · Inter 400</span>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>PACKAGING</span></div>
+</div>
+
+<!-- assets -->
+<div class="page tall" id="assets">
+  <div class="col">
+    <h2>Assets</h2>
+    <p>Everything on these pages, at full size. Click a row to download.</p>
+    <p>Photography and the Ecophilia pages are rendered from the reference vial, so the label is
+    always the real label. Under-the-hood layers are generated from their photographs.</p>
+    <p class="note">v0.1 · the first pass · 4 sep 2026</p>
+  </div>
+  <div class="body">
+    <div class="agroup"><h3>Photography</h3><p>16:9 at 2752&times;1536.</p>
+      <a class="ass" href="img/gen/hero-sand-1.png" download><span class="th"><img src="img/web/hero-sand.jpg" alt=""></span><span class="meta"><b>Raked sand — the hero</b><i>hero-sand-1.png · 2752×1536</i></span><span class="dl">DOWNLOAD</span></a>
+      <a class="ass" href="img/gen/hero-water-1.png" download><span class="th"><img src="img/web/hero-water.jpg" alt=""></span><span class="meta"><b>Still water — one ripple</b><i>hero-water-1.png · 2752×1536</i></span><span class="dl">DOWNLOAD</span></a>
+      <a class="ass" href="img/gen/hero-moss-1.png" download><span class="th"><img src="img/web/hero-moss.jpg" alt=""></span><span class="meta"><b>Moss on bark — product</b><i>hero-moss-1.png · 2752×1536</i></span><span class="dl">DOWNLOAD</span></a>
+    </div>
+    <div class="agroup"><h3>Ecophilia — the product book</h3><p>3:2 at 2528&times;1696. Flat Ecophilia green #44B24B.</p>
+      <a class="ass" href="img/gen/eco-mrdn3-1.png" download><span class="th"><img src="img/web/eco-mrdn3.jpg" alt=""></span><span class="meta"><b>MRDN-3 RT — lichen twig</b><i>eco-mrdn3-1.png</i></span><span class="dl">DOWNLOAD</span></a>
+      <a class="ass" href="img/gen/eco-trz-1.png" download><span class="th"><img src="img/web/eco-trz.jpg" alt=""></span><span class="meta"><b>MRDN-TRZ — birch bark</b><i>eco-trz-1.png</i></span><span class="dl">DOWNLOAD</span></a>
+      <a class="ass" href="img/gen/eco-tesa-1.png" download><span class="th"><img src="img/web/eco-tesa.jpg" alt=""></span><span class="meta"><b>Tesamorelin — cut branch</b><i>eco-tesa-1.png</i></span><span class="dl">DOWNLOAD</span></a>
+      <a class="ass" href="img/gen/eco-ghkcu-1.png" download><span class="th"><img src="img/web/eco-ghkcu.jpg" alt=""></span><span class="meta"><b>GHK-Cu — magnolia leaf</b><i>eco-ghkcu-1.png</i></span><span class="dl">DOWNLOAD</span></a>
+      <a class="ass" href="img/gen/eco-kubix.png" download><span class="th"><img src="img/web/eco-kubix.jpg" alt=""></span><span class="meta"><b>Kubix — river stone</b><i>eco-kubix.png</i></span><span class="dl">DOWNLOAD</span></a>
+    </div>
+    <div class="agroup"><h3>Under the hood</h3><p>Generated from the photographs above. Signal green on vanilla.</p>
+      <a class="ass" href="img/gen/under-the-hood-moss.png" download><span class="th"><img src="img/web/hood-moss.jpg" alt=""></span><span class="meta"><b>Hero — under the hood</b><i>under-the-hood-moss.png · 2752×1536</i></span><span class="dl">DOWNLOAD</span></a>
+      <a class="ass" href="img/gen/under-the-hood-eco.png" download><span class="th"><img src="img/web/hood-eco.jpg" alt=""></span><span class="meta"><b>Ecophilia page — under the hood</b><i>under-the-hood-eco.png · 2528×1696</i></span><span class="dl">DOWNLOAD</span></a>
+    </div>
+  </div>
+  <div class="foot"><span class="l"><b>meridian</b>BRAND BOOK</span><span>ASSETS</span></div>
+</div>
+
+</body>
+</html>
