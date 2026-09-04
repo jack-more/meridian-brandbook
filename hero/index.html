@@ -121,6 +121,7 @@
   document.getElementById('smooth').addEventListener('click', () => { field.fill(0); dirty = true; hint(true); });
   function hint(on) { document.getElementById('hintText').style.opacity = on ? '1' : '.35'; }
 
+  window.__sand = { strokeTo, render, get field() { return field; }, reset() { last = null; } };   /* test hook */
   (function loop() { requestAnimationFrame(loop); if (dirty) { dirty = false; render(); } })();
   addEventListener('resize', fit); fit();
 
