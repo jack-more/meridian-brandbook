@@ -1,0 +1,289 @@
+{
+ "mrdn-3-rt": {
+  "name": "MRDN-3 RT",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-3-rt-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-3-rt-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-3-rt-cube.jpg"
+  ]
+ },
+ "mrdn-trz": {
+  "name": "MRDN-TRZ",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-trz-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-trz-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-trz-cube.jpg"
+  ]
+ },
+ "tesamorelin": {
+  "name": "Tesamorelin",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tesamorelin-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tesamorelin-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tesamorelin-cube.jpg"
+  ]
+ },
+ "ghk-cu": {
+  "name": "GHK-Cu",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ghk-cu-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ghk-cu-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ghk-cu-cube.jpg"
+  ]
+ },
+ "kubix": {
+  "name": "Kubix",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kubix-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kubix-plant.jpg"
+  ]
+ },
+ "mots-c": {
+  "name": "MOTS-c",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mots-c-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mots-c-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mots-c-cube.jpg"
+  ]
+ },
+ "cjc-1295-no-dac-ipamorelin": {
+  "name": "CJC-1295 no DAC + Ipamorelin",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/cjc-1295-no-dac-ipamorelin-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/cjc-1295-no-dac-ipamorelin-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/cjc-1295-no-dac-ipamorelin-cube.jpg"
+  ]
+ },
+ "bpc-157": {
+  "name": "BPC-157",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bpc-157-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bpc-157-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bpc-157-cube.jpg"
+  ]
+ },
+ "wolverine-blend": {
+  "name": "Wolverine Blend (BPC-157/TB-500)",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/wolverine-blend-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/wolverine-blend-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/wolverine-blend-cube.jpg"
+  ]
+ },
+ "glow": {
+  "name": "GLOW",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/glow-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/glow-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/glow-cube.jpg"
+  ]
+ },
+ "klow": {
+  "name": "KLOW",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/klow-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/klow-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/klow-cube.jpg"
+  ]
+ },
+ "kpv": {
+  "name": "KPV",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kpv-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kpv-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kpv-cube.jpg"
+  ]
+ },
+ "mrdn-nad": {
+  "name": "MRDN-NAD",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-nad-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-nad-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mrdn-nad-cube.jpg"
+  ]
+ },
+ "5-amino-1mq": {
+  "name": "5-Amino-1MQ",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/5-amino-1mq-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/5-amino-1mq-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/5-amino-1mq-cube.jpg"
+  ]
+ },
+ "igf1-lr3": {
+  "name": "IGF1-LR3",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/igf1-lr3-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/igf1-lr3-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/igf1-lr3-cube.jpg"
+  ]
+ },
+ "mt-1": {
+  "name": "MT-1",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mt-1-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mt-1-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mt-1-cube.jpg"
+  ]
+ },
+ "mt-2": {
+  "name": "MT-2",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mt-2-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mt-2-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/mt-2-cube.jpg"
+  ]
+ },
+ "glutathione": {
+  "name": "Glutathione",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/glutathione-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/glutathione-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/glutathione-cube.jpg"
+  ]
+ },
+ "semax": {
+  "name": "Semax",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/semax-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/semax-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/semax-cube.jpg"
+  ]
+ },
+ "selank": {
+  "name": "Selank",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/selank-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/selank-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/selank-cube.jpg"
+  ]
+ },
+ "semax-selank-blend": {
+  "name": "Semax/Selank Blend",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/semax-selank-blend-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/semax-selank-blend-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/semax-selank-blend-cube.jpg"
+  ]
+ },
+ "aod-xa-blend": {
+  "name": "AOD-XA Blend",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/aod-xa-blend-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/aod-xa-blend-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/aod-xa-blend-cube.jpg"
+  ]
+ },
+ "tb-500": {
+  "name": "TB-500",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tb-500-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tb-500-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tb-500-cube.jpg"
+  ]
+ },
+ "ipamorelin": {
+  "name": "Ipamorelin",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ipamorelin-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ipamorelin-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ipamorelin-cube.jpg"
+  ]
+ },
+ "dsip": {
+  "name": "DSIP",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/dsip-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/dsip-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/dsip-cube.jpg"
+  ]
+ },
+ "sermorelin": {
+  "name": "Sermorelin",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/sermorelin-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/sermorelin-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/sermorelin-cube.jpg"
+  ]
+ },
+ "ss-31": {
+  "name": "SS-31",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ss-31-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ss-31-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ss-31-cube.jpg"
+  ]
+ },
+ "tesa-ipa-blend": {
+  "name": "TESA/IPA Blend",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tesa-ipa-blend-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tesa-ipa-blend-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/tesa-ipa-blend-cube.jpg"
+  ]
+ },
+ "cagrilintide": {
+  "name": "Cagrilintide",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/cagrilintide-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/cagrilintide-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/cagrilintide-cube.jpg"
+  ]
+ },
+ "thymosin-alpha-1": {
+  "name": "Thymosin Alpha-1",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/thymosin-alpha-1-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/thymosin-alpha-1-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/thymosin-alpha-1-cube.jpg"
+  ]
+ },
+ "ara-290": {
+  "name": "ARA-290",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ara-290-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ara-290-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/ara-290-cube.jpg"
+  ]
+ },
+ "aod-9604": {
+  "name": "AOD-9604",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/aod-9604-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/aod-9604-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/aod-9604-cube.jpg"
+  ]
+ },
+ "kisspeptin": {
+  "name": "Kisspeptin",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kisspeptin-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kisspeptin-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/kisspeptin-cube.jpg"
+  ]
+ },
+ "pt-141": {
+  "name": "PT-141",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/pt-141-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/pt-141-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/pt-141-cube.jpg"
+  ]
+ },
+ "slu-pp-332": {
+  "name": "SLU-PP-332",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/slu-pp-332-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/slu-pp-332-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/slu-pp-332-cube.jpg"
+  ]
+ },
+ "adamax": {
+  "name": "ADAMAX",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/adamax-main.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/adamax-plant.jpg",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/adamax-cube.jpg"
+  ]
+ }
+}
