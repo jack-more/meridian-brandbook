@@ -5,6 +5,14 @@ from PIL import Image
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 prods=json.load(open(os.path.join(ROOT,'products.json')))
 W=os.path.join(ROOT,'img/products/web'); os.makedirs(W,exist_ok=True)
+F=os.path.join(ROOT,'img/products/full'); os.makedirs(F,exist_ok=True)
+def full(s_,k):
+    src=f'{ROOT}/img/products/{s_}-{k}.png'
+    if not os.path.exists(src): src=f'{ROOT}/img/products/{s_}-{k}.jpg'
+    if not os.path.exists(src): return False
+    dst=f'{F}/{s_}-{k}.jpg'
+    if os.path.exists(dst) and os.path.getmtime(dst)>=os.path.getmtime(src): return True
+    im=Image.open(src).convert('RGB'); w=min(2000,im.width); im.resize((w,int(w*im.height/im.width)),Image.LANCZOS).save(dst,quality=92,subsampling=0); return True
 def web(src,dst,w):
     if not os.path.exists(src): return False
     if os.path.exists(dst) and os.path.getmtime(dst)>=os.path.getmtime(src): return True
@@ -12,9 +20,12 @@ def web(src,dst,w):
 have={}
 for p in prods:
     s=p['slug']; have[s]={}
-    have[s]['main']=web(f'{ROOT}/img/products/{s}-main.jpg',f'{W}/{s}-main.jpg',1000)
-    have[s]['cube']=web(f'{ROOT}/img/products/{s}-cube.jpg',f'{W}/{s}-cube.jpg',1000)
+    # generated PNGs win over the composite JPGs once they exist
+    mp=f'{ROOT}/img/products/{s}-main.png'; cp=f'{ROOT}/img/products/{s}-cube.png'
+    have[s]['main']=web(mp if os.path.exists(mp) else f'{ROOT}/img/products/{s}-main.jpg',f'{W}/{s}-main.jpg',1000)
+    have[s]['cube']=web(cp if os.path.exists(cp) else f'{ROOT}/img/products/{s}-cube.jpg',f'{W}/{s}-cube.jpg',1000)
     have[s]['plant']=web(f'{ROOT}/img/products/{s}-plant.png',f'{W}/{s}-plant.jpg',1000)
+    for k in ['main','cube','plant','float','water']: full(s,k)
     have[s]['float']=web(f'{ROOT}/img/products/{s}-float.png',f'{W}/{s}-float.jpg',1000)
     have[s]['water']=web(f'{ROOT}/img/products/{s}-water.png',f'{W}/{s}-water.jpg',1400)
 # the gallery page
@@ -25,7 +36,7 @@ for p in prods:
     for k,label,ext in [('main','Main','jpg'),('float','Floating','png'),('water','In the water','png'),('plant','Ecophilia','png'),('cube','With the cube','jpg')]:
         if k in ('float','water','cube') and s=='kubix': continue
         if h[k]:
-            cells+=f'<a class="shot" href="../img/products/{s}-{k}.{ext}" download><img loading="lazy" src="../img/products/web/{s}-{k}.jpg" alt="{name} — {label}"><span>{label} · download</span></a>'
+            cells+=f'<a class="shot" href="../img/products/full/{s}-{k}.jpg" download><img loading="lazy" src="../img/products/web/{s}-{k}.jpg" alt="{name} — {label}"><span>{label} · download</span></a>'
         else:
             cells+=f'<div class="shot pending"><span>{label} · rendering</span></div>'
     rows.append(f'<section id="{s}"><h2>{name}<i>{p["dose"]}</i></h2><div class="shots">{cells}</div></section>')
@@ -54,7 +65,7 @@ section h2 i{{font-style:normal;font-family:'JetBrains Mono',monospace;font-size
 .shot.pending span{{color:var(--mid)}}
 @media (max-width:800px){{.shots{{grid-template-columns:1fr}}header{{padding:26px 22px}}}}
 </style></head><body><div class="wrap">
-<header><div><h1>Products</h1><p>Every offering, five ways: the main shot on the shadow master, the floating vial, the vial standing in the water, its Ecophilia page on its own plant, and the vial beside the cube. Names and doses are composited from one master, so every product carries the same light. Click any plate to download the full-size file.</p></div><a href="../">&larr; BRAND BOOK</a></header>
+<header><div><h1>Products</h1><p>Every offering, five ways: the main shot on the shadow master, the floating vial, the vial standing in the water, its Ecophilia page on its own plant, and the vial beside the cube. Names and doses are composited from one master, so every product carries the same light. Click any plate to download it at 2000 px.</p></div><a href="../">&larr; BRAND BOOK</a></header>
 {''.join(rows)}
 </div></body></html>'''
 os.makedirs(os.path.join(ROOT,'products'),exist_ok=True); open(os.path.join(ROOT,'products/index.html'),'w').write(html)
