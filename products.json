@@ -120,8 +120,8 @@
   "doses": [
    "70 mg"
   ],
-  "plant": "a magnolia flower bud on its furry stem",
-  "orientation": "vertically"
+  "plant": "a magnolia branch with one furry bud, lying flat",
+  "orientation": "horizontally, with the vial resting on the branch"
  },
  {
   "slug": "klow",
@@ -132,8 +132,8 @@
   "doses": [
    "80 mg"
   ],
-  "plant": "a curled young fern fiddlehead",
-  "orientation": "vertically"
+  "plant": "a wide flat bracket fungus with a banded top",
+  "orientation": "flat, with the vial standing on its top"
  },
  {
   "slug": "kpv",
@@ -181,8 +181,8 @@
   "doses": [
    "1 mg"
   ],
-  "plant": "a green bamboo stalk with one node",
-  "orientation": "vertically"
+  "plant": "a thick section of bamboo culm with one node, lying flat",
+  "orientation": "horizontally, with the vial resting on it"
  },
  {
   "slug": "mt-1",
@@ -205,8 +205,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "two smooth river stones stacked",
-  "orientation": "vertically"
+  "plant": "one large flat slab of grey slate",
+  "orientation": "flat, with the vial standing on it"
  },
  {
   "slug": "glutathione",
@@ -290,8 +290,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a brown cattail reed on its stem",
-  "orientation": "vertically"
+  "plant": "a loose bundle of long cattail leaves laid flat",
+  "orientation": "horizontally, with the vial resting on them"
  },
  {
   "slug": "dsip",
@@ -303,8 +303,8 @@
    "10 mg",
    "15 mg"
   ],
-  "plant": "a dried poppy seed head on its stem",
-  "orientation": "vertically"
+  "plant": "a flat bed of dried lavender stems",
+  "orientation": "horizontally, with the vial resting on it"
  },
  {
   "slug": "sermorelin",
@@ -363,8 +363,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a small bunch of dried wheat stems tied together",
-  "orientation": "vertically"
+  "plant": "a small woven mat of dried wheat stems",
+  "orientation": "flat, with the vial standing on it"
  },
  {
   "slug": "ara-290",
@@ -387,8 +387,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a dried thistle head on its stem",
-  "orientation": "vertically"
+  "plant": "a large dried sunflower head lying face up",
+  "orientation": "flat, with the vial standing on it"
  },
  {
   "slug": "kisspeptin",
@@ -399,8 +399,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a cherry blossom twig with a few pink flowers",
-  "orientation": "diagonally"
+  "plant": "a cherry blossom branch with pink flowers, lying flat",
+  "orientation": "horizontally, with the vial resting on the branch among the flowers"
  },
  {
   "slug": "pt-141",
@@ -411,8 +411,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a dried protea flower head on its stem",
-  "orientation": "vertically"
+  "plant": "a large dried protea flower head lying on its side",
+  "orientation": "horizontally, with the vial resting against it"
  },
  {
   "slug": "slu-pp-332",

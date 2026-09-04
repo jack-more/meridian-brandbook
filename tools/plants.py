@@ -11,7 +11,7 @@ def one(p):
     if os.path.exists(out): return p['slug'],'exists'
     name=p['name'].replace('MRDN-','M-'); dose=p['dose']
     prompt=(f"A page from a modern plant book, photographed flat. The background is one perfectly flat, uniform bright green, exactly the green of the second reference book cover, edge to edge, no page edges, no border. "
-            f"{p['plant'][0].upper()+p['plant'][1:]} lies {p['orientation']} across the page, cut out cleanly on the green. Resting on it, standing upright, is the exact vial from the first reference with the same label design, but the product name reads {name} and the dose reads {dose}: "
+            f"{p['plant'][0].upper()+p['plant'][1:]} lies {p['orientation']} across the page, cut out cleanly on the green. The exact vial from the first reference physically rests on it, its base in contact with the object and casting a small soft shadow onto it, never floating beside it; the vial is clear glass and the object shows through the glass around the label. It is the vial with the same label design, but the product name reads {name} and the dose reads {dose}: "
             f"meridian wordmark, rule, {name} in bold sans, {dose}, rule, 99% Purity, Research Use Only, the small green M badge bottom right; vanilla cap over a silver band. Every letter of the name fully visible. Nothing else on the page, no other text. Ultra sharp, flat, graphic.")
     for attempt in range(2):
         r=subprocess.run(['higgsfield','generate','create','nano_banana_2','--image',LABEL,'--image',COVER,'--aspect_ratio','3:2','--wait','--prompt',prompt],capture_output=True,text=True,timeout=600)
