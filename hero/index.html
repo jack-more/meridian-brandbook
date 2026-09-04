@@ -60,7 +60,7 @@
     W = hero.clientWidth; H = hero.clientHeight;
     cv.width = W; cv.height = H;
     w = Math.max(64, Math.round(W * RES)); h = Math.max(64, Math.round(H * RES));
-    field = new Float32Array(w * h); out = new OffscreenCanvas ? new OffscreenCanvas(w, h) : Object.assign(document.createElement('canvas'), { width: w, height: h });
+    field = new Float32Array(w * h); out = document.createElement('canvas'); out.width = w; out.height = h;
     img = out.getContext('2d').createImageData(w, h);
     render();
   }
