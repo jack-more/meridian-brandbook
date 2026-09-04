@@ -11,8 +11,8 @@
    "30 mg",
    "40 mg"
   ],
-  "plant": "a thin lichen-covered twig with pale grey-green lichen",
-  "orientation": "horizontally",
+  "plant": "a nest of pale grey-green lichen",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -51,9 +51,9 @@
    "50 mg",
    "100 mg"
   ],
-  "plant": "a single large dried copper-brown magnolia leaf",
-  "orientation": "diagonally",
-  "pose": "stand"
+  "plant": "a loose pile of dried copper-brown magnolia leaves",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "kubix",
@@ -77,8 +77,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a single green fern frond",
-  "orientation": "diagonally from lower left to upper right",
+  "plant": "a cluster of layered green fern fronds",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -90,8 +90,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a length of grapevine with curling tendrils",
-  "orientation": "horizontally",
+  "plant": "a tangle of grapevine with curling tendrils",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -103,9 +103,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a piece of pale sun-bleached driftwood",
+  "plant": "a piece of pale driftwood with a hollow worn into it",
   "orientation": "horizontally",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "wolverine-blend",
@@ -116,8 +116,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a pine branch with long green needles",
-  "orientation": "diagonally from upper left to lower right",
+  "plant": "a bed of dry pine needles with two small cones",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -129,8 +129,8 @@
   "doses": [
    "70 mg"
   ],
-  "plant": "a magnolia branch with one furry bud, lying flat",
-  "orientation": "horizontally, with the vial resting on the branch",
+  "plant": "a bed of fallen magnolia petals, white and pink",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -142,9 +142,9 @@
   "doses": [
    "80 mg"
   ],
-  "plant": "a wide flat bracket fungus with a banded top",
-  "orientation": "flat, with the vial standing on its top",
-  "pose": "stand"
+  "plant": "a split cacao pod, one half open and hollow",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "kpv",
@@ -155,8 +155,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "an olive branch with silver-green leaves",
-  "orientation": "diagonally",
+  "plant": "a wreath of olive branches with small green olives",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -169,9 +169,9 @@
    "500 mg",
    "1000 mg"
   ],
-  "plant": "a thick slab of pine bark",
-  "orientation": "flat, horizontally",
-  "pose": "stand"
+  "plant": "a curl of thick pine bark",
+  "orientation": "horizontally",
+  "pose": "lie"
  },
  {
   "slug": "5-amino-1mq",
@@ -182,9 +182,9 @@
   "doses": [
    "5 mg"
   ],
-  "plant": "a dried lotus seed pod",
+  "plant": "a cluster of three dried lotus seed pods",
   "orientation": "flat",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "igf1-lr3",
@@ -195,7 +195,7 @@
   "doses": [
    "1 mg"
   ],
-  "plant": "two green bamboo culm sections lying side by side",
+  "plant": "a bundle of green bamboo culms tied together",
   "orientation": "horizontally",
   "pose": "lie"
  },
@@ -208,9 +208,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a smooth dark grey pebble",
+  "plant": "a hollow among smooth grey river pebbles",
   "orientation": "flat",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "mt-2",
@@ -221,7 +221,7 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a large flat piece of rough grey sandstone rock, natural and irregular",
+  "plant": "a bed of dark slate chips",
   "orientation": "flat",
   "pose": "lie"
  },
@@ -248,7 +248,7 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a single large dried oak leaf",
+  "plant": "a drift of dried brown oak leaves",
   "orientation": "flat",
   "pose": "lie"
  },
@@ -261,9 +261,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a single yellow ginkgo leaf",
+  "plant": "a pile of yellow ginkgo leaves",
   "orientation": "flat",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "semax-selank-blend",
@@ -274,9 +274,9 @@
   "doses": [
    "10 mg / 10 mg"
   ],
-  "plant": "two ginkgo leaves crossed at the stems",
+  "plant": "a drift of small dried beech leaves",
   "orientation": "flat",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "aod-xa-blend",
@@ -287,7 +287,7 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a forked willow branch",
+  "plant": "the crook of a forked willow branch",
   "orientation": "horizontally",
   "pose": "lie"
  },
@@ -300,9 +300,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "the round sawn end of a small log showing its rings",
+  "plant": "a log end with a hollow knot",
   "orientation": "flat",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "ipamorelin",
@@ -313,9 +313,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a loose bundle of long cattail leaves laid flat",
-  "orientation": "horizontally, with the vial resting on them",
-  "pose": "stand"
+  "plant": "a woven nest of cattail leaves",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "dsip",
@@ -327,9 +327,9 @@
    "10 mg",
    "15 mg"
   ],
-  "plant": "a flat bed of dried lavender stems",
-  "orientation": "horizontally, with the vial resting on it",
-  "pose": "stand"
+  "plant": "a deep bed of dried lavender",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "sermorelin",
@@ -340,8 +340,8 @@
   "doses": [
    "5 mg"
   ],
-  "plant": "a sprig of rosemary",
-  "orientation": "diagonally",
+  "plant": "a wreath of rosemary sprigs",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -353,9 +353,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a rugged piece of cork oak bark",
-  "orientation": "diagonally",
-  "pose": "stand"
+  "plant": "a curl of rugged cork oak bark",
+  "orientation": "horizontally",
+  "pose": "lie"
  },
  {
   "slug": "tesa-ipa-blend",
@@ -366,8 +366,8 @@
   "doses": [
    "10 mg / 3 mg"
   ],
-  "plant": "a birch twig with hanging catkins",
-  "orientation": "horizontally",
+  "plant": "a tangle of birch twigs with hanging catkins",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -379,9 +379,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a single split monstera leaf",
-  "orientation": "diagonally",
-  "pose": "stand"
+  "plant": "a large monstera leaf folded over",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "thymosin-alpha-1",
@@ -392,9 +392,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a small woven mat of dried wheat stems",
-  "orientation": "flat, with the vial standing on it",
-  "pose": "stand"
+  "plant": "a sheaf of dried wheat bound with twine",
+  "orientation": "horizontally",
+  "pose": "lie"
  },
  {
   "slug": "ara-290",
@@ -405,9 +405,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a moss-covered stone",
+  "plant": "a thick cushion of green moss",
   "orientation": "flat",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "aod-9604",
@@ -418,9 +418,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a large dried sunflower head lying face up",
-  "orientation": "flat, with the vial standing on it",
-  "pose": "stand"
+  "plant": "a large dried sunflower head with loose seeds",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "kisspeptin",
@@ -431,8 +431,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a cherry blossom branch with pink flowers, lying flat",
-  "orientation": "horizontally, with the vial resting on the branch among the flowers",
+  "plant": "crossing cherry blossom branches with pink flowers",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -444,9 +444,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a large dried protea flower head lying on its side",
-  "orientation": "horizontally, with the vial resting against it",
-  "pose": "stand"
+  "plant": "a dried protea flower head opened wide",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "slu-pp-332",
@@ -457,9 +457,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a single pinecone",
+  "plant": "a pile of pinecones",
   "orientation": "flat",
-  "pose": "stand"
+  "pose": "lie"
  },
  {
   "slug": "adamax",
@@ -470,8 +470,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a twisted piece of grey driftwood root",
-  "orientation": "horizontally",
+  "plant": "a tangle of grey driftwood roots",
+  "orientation": "flat",
   "pose": "lie"
  }
 ]
