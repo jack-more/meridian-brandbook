@@ -53,7 +53,7 @@
   const ctx = cv.getContext('2d');
   const RES = 0.5;                                  /* work at half screen res */
   const LIGHT = { x: 0.9, y: -0.44 };               /* upper right, like the photo */
-  const RADIUS = 3.2, DISPLACE = 5.5, DEPTH = 1;
+  const RADIUS = 5.6, DISPLACE = 7, DEPTH = 1;
   let W = 0, H = 0, w = 0, h = 0, field, src, srcData, out, outImg, grain;
 
   function fit() {
@@ -82,8 +82,8 @@
       const d2 = (xx - x) * (xx - x) + (yy - y) * (yy - y);
       const i = yy * w + xx;
       const trough = Math.exp(-d2 / r2);                                  /* the groove */
-      const lip = Math.exp(-((Math.sqrt(d2) - r * 1.7) ** 2) / (r * 0.9)) * 0.28;   /* sand pushed to the sides */
-      field[i] = Math.max(-DEPTH, Math.min(DEPTH * 0.4, field[i] - trough * 0.5 + lip * 0.5));
+      const lip = Math.exp(-((Math.sqrt(d2) - r * 1.6) ** 2) / (r * 1.4)) * 0.22;   /* sand pushed to the sides */
+      field[i] = Math.max(-DEPTH, Math.min(DEPTH * 0.35, field[i] - trough * 0.45 + lip * 0.45));
     }
   }
 
@@ -98,8 +98,8 @@
       let sx = x + gx * DISPLACE, sy = y + gy * DISPLACE;
       sx = sx < 0 ? 0 : sx > w - 1 ? w - 1 : sx; sy = sy < 0 ? 0 : sy > h - 1 ? h - 1 : sy;
       const j = ((sy | 0) * w + (sx | 0)) * 4;
-      const shade = (gx * LIGHT.x + gy * LIGHT.y) * grain[i] * 1.25;   /* + lit, - shadow */
-      const k = shade > 0 ? 1 + shade * 0.9 : 1 + shade * 1.4;
+      const shade = (gx * LIGHT.x + gy * LIGHT.y) * grain[i] * 2.4;    /* + lit, - shadow */
+      const k = Math.max(0.72, Math.min(1.16, 1 + shade));
       const p = i * 4;
       d[p] = Math.min(255, S[j] * k); d[p + 1] = Math.min(255, S[j + 1] * k); d[p + 2] = Math.min(255, S[j + 2] * k); d[p + 3] = 255;
     }
