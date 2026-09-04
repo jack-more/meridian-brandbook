@@ -15,14 +15,14 @@ for p in prods:
     have[s]['main']=web(f'{ROOT}/img/products/{s}-main.jpg',f'{W}/{s}-main.jpg',1000)
     have[s]['cube']=web(f'{ROOT}/img/products/{s}-cube.jpg',f'{W}/{s}-cube.jpg',1000)
     have[s]['plant']=web(f'{ROOT}/img/products/{s}-plant.png',f'{W}/{s}-plant.jpg',1000)
-    have[s]['float']=web(f'{ROOT}/img/products/{s}-float.jpg',f'{W}/{s}-float.jpg',1000)
-    have[s]['water']=web(f'{ROOT}/img/products/{s}-water.jpg',f'{W}/{s}-water.jpg',1400)
+    have[s]['float']=web(f'{ROOT}/img/products/{s}-float.png',f'{W}/{s}-float.jpg',1000)
+    have[s]['water']=web(f'{ROOT}/img/products/{s}-water.png',f'{W}/{s}-water.jpg',1400)
 # the gallery page
 rows=[]
 for p in prods:
     s=p['slug']; name=p['name'].replace('MRDN-','M-'); h=have[s]
     cells=''
-    for k,label,ext in [('main','Main','jpg'),('float','Floating','jpg'),('water','In the water','jpg'),('plant','Ecophilia','png'),('cube','With the cube','jpg')]:
+    for k,label,ext in [('main','Main','jpg'),('float','Floating','png'),('water','In the water','png'),('plant','Ecophilia','png'),('cube','With the cube','jpg')]:
         if k in ('float','water','cube') and s=='kubix': continue
         if h[k]:
             cells+=f'<a class="shot" href="../img/products/{s}-{k}.{ext}" download><img loading="lazy" src="../img/products/web/{s}-{k}.jpg" alt="{name} — {label}"><span>{label} · download</span></a>'
