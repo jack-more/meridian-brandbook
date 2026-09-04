@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>meridian — rake the sand</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&display=swap">
+<style>
+  :root{--forest:#2F3D30;--vanilla:#F4EADB;--ink:#2F3D30}
+  *{box-sizing:border-box;margin:0}
+  html,body{background:var(--vanilla);color:var(--ink);font-family:Inter,system-ui,sans-serif}
+  .hero{position:relative;width:100%;height:min(100vh,860px);min-height:520px;overflow:hidden;background:#e9dfcf;cursor:crosshair}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;display:block;user-select:none;-webkit-user-drag:none}
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+  .copy{position:absolute;left:clamp(24px,6vw,96px);top:50%;transform:translateY(-50%);max-width:min(560px,60vw);pointer-events:none;z-index:2}
+  .copy .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest);opacity:.75;margin-bottom:18px}
+  .copy h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(44px,6.4vw,96px);line-height:.95;letter-spacing:-.02em;color:var(--forest)}
+  .copy h1 i{font-style:italic}
+  .copy p{margin-top:22px;font-size:clamp(15px,1.3vw,19px);line-height:1.5;color:var(--forest);opacity:.85;max-width:38ch}
+  .copy .cta{margin-top:28px;display:flex;gap:12px;pointer-events:auto}
+  .copy a{display:inline-block;padding:14px 24px;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--forest);color:var(--forest)}
+  .copy a.primary{background:var(--forest);color:var(--vanilla)}
+  .hint{position:absolute;right:clamp(20px,3vw,40px);bottom:clamp(18px,2.6vw,32px);z-index:2;display:flex;align-items:center;gap:14px;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);opacity:.8;pointer-events:none}
+  .hint button{pointer-events:auto;font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:rgba(244,234,219,.7);border:1px solid rgba(47,61,48,.35);border-radius:999px;padding:9px 14px;cursor:pointer}
+  .hint button:hover{background:rgba(244,234,219,.95)}
+  @media (max-width:700px){.copy{max-width:86vw}.copy .cta{flex-direction:column}}
+</style>
+</head>
+<body>
+<section class="hero" id="hero">
+  <img src="sand.jpg" alt="A meridian vial standing in raked sand">
+  <canvas id="sand"></canvas>
+  <div class="copy">
+    <div class="eyebrow">U.S.-made research materials</div>
+    <h1>Research with <i>higher</i> standards.</h1>
+    <p>Transparent, batch-specific laboratory documentation with every vial.</p>
+    <div class="cta"><a class="primary" href="#">Shop research</a><a href="#">View lab results</a></div>
+  </div>
+  <div class="hint"><span id="hintText">Drag to rake the sand</span><button id="smooth" type="button">Smooth it over</button></div>
+</section>
+<script>
+/* ---------------------------------------------------------------
+   RAKE THE SAND
+   A height field sits over the photograph. Dragging stamps a comb of
+   grooves along the stroke; the field is lit from the same side as the
+   photo (light from the right, shadows falling left) and composited
+   as light and shadow only, so the sand stays the sand.
+----------------------------------------------------------------*/
+(function () {
+  const hero = document.getElementById('hero'), cv = document.getElementById('sand');
+  const ctx = cv.getContext('2d');
+  const RES = 0.34;                       /* height field at a third of screen res */
+  let W = 0, H = 0, w = 0, h = 0, field, out, img;
+  const LIGHT = { x: 0.86, y: -0.5 };     /* from the upper right, matching the photo */
+  const TEETH = 5, SPACING = 7, RADIUS = 2.4, DEPTH = 1;
+
+  function fit() {
+    W = hero.clientWidth; H = hero.clientHeight;
+    cv.width = W; cv.height = H;
+    w = Math.max(64, Math.round(W * RES)); h = Math.max(64, Math.round(H * RES));
+    field = new Float32Array(w * h); out = new OffscreenCanvas ? new OffscreenCanvas(w, h) : Object.assign(document.createElement('canvas'), { width: w, height: h });
+    img = out.getContext('2d').createImageData(w, h);
+    render();
+  }
+
+  function stamp(x, y, nx, ny) {
+    /* comb: TEETH grooves spread across the stroke normal (nx, ny) */
+    for (let t = 0; t < TEETH; t++) {
+      const o = (t - (TEETH - 1) / 2) * SPACING;
+      const cx = x + nx * o, cy = y + ny * o;
+      const r = RADIUS, r2 = r * r;
+      const x0 = Math.max(0, Math.floor(cx - r - 1)), x1 = Math.min(w - 1, Math.ceil(cx + r + 1));
+      const y0 = Math.max(0, Math.floor(cy - r - 1)), y1 = Math.min(h - 1, Math.ceil(cy + r + 1));
+      for (let yy = y0; yy <= y1; yy++) for (let xx = x0; xx <= x1; xx++) {
+        const d2 = (xx - cx) * (xx - cx) + (yy - cy) * (yy - cy);
+        if (d2 > r2 * 2.2) continue;
+        const g = Math.exp(-d2 / r2);
+        const i = yy * w + xx;
+        field[i] = Math.max(-DEPTH, field[i] - g * 0.55);          /* the groove */
+        /* a little ridge either side, where the sand goes */
+        const ring = Math.exp(-(Math.sqrt(d2) - r * 1.35) ** 2 / 0.9) * 0.22;
+        field[i] = Math.min(DEPTH, field[i] + ring);
+      }
+    }
+  }
+
+  function render() {
+    const d = img.data;
+    for (let y = 1; y < h - 1; y++) for (let x = 1; x < w - 1; x++) {
+      const i = y * w + x;
+      const gx = field[i + 1] - field[i - 1], gy = field[i + w] - field[i - w];
+      const s = gx * LIGHT.x + gy * LIGHT.y;            /* facing the light: lit; away: shadow */
+      const p = i * 4;
+      if (s > 0) { d[p] = 255; d[p + 1] = 248; d[p + 2] = 236; d[p + 3] = Math.min(200, s * 520); }
+      else if (s < 0) { d[p] = 92; d[p + 1] = 70; d[p + 2] = 52; d[p + 3] = Math.min(190, -s * 560); }
+      else d[p + 3] = 0;
+    }
+    out.getContext('2d').putImageData(img, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(out, 0, 0, W, H);
+  }
+
+  let last = null, drawing = false, dirty = false;
+  const toField = e => { const r = cv.getBoundingClientRect(); return { x: (e.clientX - r.left) * RES, y: (e.clientY - r.top) * RES }; };
+  function strokeTo(p) {
+    if (!last) { last = p; return; }
+    const dx = p.x - last.x, dy = p.y - last.y, len = Math.hypot(dx, dy);
+    if (len < 0.6) return;
+    const nx = -dy / len, ny = dx / len;
+    const steps = Math.ceil(len / 1.2);
+    for (let k = 1; k <= steps; k++) stamp(last.x + dx * k / steps, last.y + dy * k / steps, nx, ny);
+    last = p; dirty = true;
+  }
+  cv.addEventListener('pointerdown', e => { drawing = true; last = toField(e); try { cv.setPointerCapture(e.pointerId); } catch (_) {} hint(false); });
+  cv.addEventListener('pointermove', e => { if (drawing) strokeTo(toField(e)); });
+  const end = () => { drawing = false; last = null; };
+  cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+  document.getElementById('smooth').addEventListener('click', () => { field.fill(0); dirty = true; hint(true); });
+  function hint(on) { document.getElementById('hintText').style.opacity = on ? '1' : '.35'; }
+
+  (function loop() { requestAnimationFrame(loop); if (dirty) { dirty = false; render(); } })();
+  addEventListener('resize', fit); fit();
+
+  /* a first stroke, so it is obvious the sand can be raked */
+  setTimeout(() => {
+    const pts = []; for (let i = 0; i <= 60; i++) { const t = i / 60; pts.push({ x: (0.08 + t * 0.42) * w, y: (0.72 - Math.sin(t * Math.PI) * 0.16) * h }); }
+    let i = 0; const tick = () => { if (i < pts.length) { strokeTo(pts[i++]); setTimeout(tick, 18); } else last = null; }; last = pts[0]; tick();
+  }, 900);
+})();
+</script>
+</body>
+</html>
