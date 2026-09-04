@@ -1,0 +1,441 @@
+[
+ {
+  "slug": "mrdn-3-rt",
+  "name": "MRDN-3 RT",
+  "category": "metabolic-research",
+  "purity": "\u2265 99.2%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg",
+   "20 mg",
+   "30 mg",
+   "40 mg"
+  ],
+  "plant": "a thin lichen-covered twig with pale grey-green lichen",
+  "orientation": "horizontally"
+ },
+ {
+  "slug": "mrdn-trz",
+  "name": "MRDN-TRZ",
+  "category": "metabolic-research",
+  "purity": "\u2265 99.1%",
+  "dose": "15 mg",
+  "doses": [
+   "15 mg"
+  ],
+  "plant": "a curled sheet of silver birch bark",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "tesamorelin",
+  "name": "Tesamorelin",
+  "category": "performance-research",
+  "purity": "\u2265 99.0%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a real cut tree branch with grey-brown bark and one sawn end",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "ghk-cu",
+  "name": "GHK-Cu",
+  "category": "dermal-research",
+  "purity": "\u2265 98.5%",
+  "dose": "50 mg",
+  "doses": [
+   "50 mg",
+   "100 mg"
+  ],
+  "plant": "a single large dried copper-brown magnolia leaf",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "kubix",
+  "name": "Kubix",
+  "category": "peptide-research",
+  "purity": "\u2265 98.8%",
+  "dose": "70 mg",
+  "doses": [
+   "70 mg"
+  ],
+  "plant": "a smooth grey river stone",
+  "orientation": "flat"
+ },
+ {
+  "slug": "mots-c",
+  "name": "MOTS-c",
+  "category": "cellular-research",
+  "purity": "\u2265 99.0%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a single green fern frond",
+  "orientation": "diagonally from lower left to upper right"
+ },
+ {
+  "slug": "cjc-1295-no-dac-ipamorelin",
+  "name": "CJC-1295 no DAC + Ipamorelin",
+  "category": "performance-research",
+  "purity": "\u2265 98.9%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a length of grapevine with curling tendrils",
+  "orientation": "horizontally"
+ },
+ {
+  "slug": "bpc-157",
+  "name": "BPC-157",
+  "category": "peptide-research",
+  "purity": "\u2265 99.1%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a piece of pale sun-bleached driftwood",
+  "orientation": "horizontally"
+ },
+ {
+  "slug": "wolverine-blend",
+  "name": "Wolverine Blend (BPC-157/TB-500)",
+  "category": "peptide-research",
+  "purity": "\u2265 98.7%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a pine branch with long green needles",
+  "orientation": "diagonally from upper left to lower right"
+ },
+ {
+  "slug": "glow",
+  "name": "GLOW",
+  "category": "dermal-research",
+  "purity": "\u2265 98.6%",
+  "dose": "70 mg",
+  "doses": [
+   "70 mg"
+  ],
+  "plant": "a magnolia flower bud on its furry stem",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "klow",
+  "name": "KLOW",
+  "category": "dermal-research",
+  "purity": "\u2265 98.6%",
+  "dose": "80 mg",
+  "doses": [
+   "80 mg"
+  ],
+  "plant": "a curled young fern fiddlehead",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "kpv",
+  "name": "KPV",
+  "category": "peptide-research",
+  "purity": "\u2265 99.0%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "an olive branch with silver-green leaves",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "mrdn-nad",
+  "name": "MRDN-NAD",
+  "category": "cellular-research",
+  "purity": "\u2265 99.0%",
+  "dose": "500 mg",
+  "doses": [
+   "500 mg",
+   "1000 mg"
+  ],
+  "plant": "a thick slab of pine bark",
+  "orientation": "flat, horizontally"
+ },
+ {
+  "slug": "5-amino-1mq",
+  "name": "5-Amino-1MQ",
+  "category": "metabolic-research",
+  "purity": "\u2265 98.5%",
+  "dose": "5 mg",
+  "doses": [
+   "5 mg"
+  ],
+  "plant": "a dried lotus seed pod",
+  "orientation": "flat"
+ },
+ {
+  "slug": "igf1-lr3",
+  "name": "IGF1-LR3",
+  "category": "performance-research",
+  "purity": "\u2265 98.8%",
+  "dose": "1 mg",
+  "doses": [
+   "1 mg"
+  ],
+  "plant": "a green bamboo stalk with one node",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "mt-1",
+  "name": "MT-1",
+  "category": "dermal-research",
+  "purity": "\u2265 98.5%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a smooth dark grey pebble",
+  "orientation": "flat"
+ },
+ {
+  "slug": "mt-2",
+  "name": "MT-2",
+  "category": "dermal-research",
+  "purity": "\u2265 98.5%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "two smooth river stones stacked",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "glutathione",
+  "name": "Glutathione",
+  "category": "cellular-research",
+  "purity": "\u2265 99.0%",
+  "dose": "600 mg",
+  "doses": [
+   "600 mg",
+   "1200 mg"
+  ],
+  "plant": "a sprig of eucalyptus with round blue-green leaves",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "semax",
+  "name": "Semax",
+  "category": "peptide-research",
+  "purity": "\u2265 99.0%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a single dried oak leaf",
+  "orientation": "flat"
+ },
+ {
+  "slug": "selank",
+  "name": "Selank",
+  "category": "peptide-research",
+  "purity": "\u2265 99.0%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a single yellow ginkgo leaf",
+  "orientation": "flat"
+ },
+ {
+  "slug": "semax-selank-blend",
+  "name": "Semax/Selank Blend",
+  "category": "peptide-research",
+  "purity": "\u2265 98.7%",
+  "dose": "10 mg / 10 mg",
+  "doses": [
+   "10 mg / 10 mg"
+  ],
+  "plant": "two ginkgo leaves crossed at the stems",
+  "orientation": "flat"
+ },
+ {
+  "slug": "aod-xa-blend",
+  "name": "AOD-XA Blend",
+  "category": "metabolic-research",
+  "purity": "\u2265 98.5%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a forked willow branch",
+  "orientation": "horizontally"
+ },
+ {
+  "slug": "tb-500",
+  "name": "TB-500",
+  "category": "peptide-research",
+  "purity": "\u2265 98.8%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "the round sawn end of a small log showing its rings",
+  "orientation": "flat"
+ },
+ {
+  "slug": "ipamorelin",
+  "name": "Ipamorelin",
+  "category": "performance-research",
+  "purity": "\u2265 99.3%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a brown cattail reed on its stem",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "dsip",
+  "name": "DSIP",
+  "category": "peptide-research",
+  "purity": "\u2265 98.9%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg",
+   "15 mg"
+  ],
+  "plant": "a dried poppy seed head on its stem",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "sermorelin",
+  "name": "Sermorelin",
+  "category": "performance-research",
+  "purity": "\u2265 99.0%",
+  "dose": "5 mg",
+  "doses": [
+   "5 mg"
+  ],
+  "plant": "a sprig of rosemary",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "ss-31",
+  "name": "SS-31",
+  "category": "cellular-research",
+  "purity": "\u2265 98.9%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a rugged piece of cork oak bark",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "tesa-ipa-blend",
+  "name": "TESA/IPA Blend",
+  "category": "performance-research",
+  "purity": "\u2265 98.7%",
+  "dose": "10 mg / 3 mg",
+  "doses": [
+   "10 mg / 3 mg"
+  ],
+  "plant": "a birch twig with hanging catkins",
+  "orientation": "horizontally"
+ },
+ {
+  "slug": "cagrilintide",
+  "name": "Cagrilintide",
+  "category": "metabolic-research",
+  "purity": "\u2265 99.0%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a single split monstera leaf",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "thymosin-alpha-1",
+  "name": "Thymosin Alpha-1",
+  "category": "peptide-research",
+  "purity": "\u2265 99.0%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a small bunch of dried wheat stems tied together",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "ara-290",
+  "name": "ARA-290",
+  "category": "peptide-research",
+  "purity": "\u2265 98.8%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a moss-covered stone",
+  "orientation": "flat"
+ },
+ {
+  "slug": "aod-9604",
+  "name": "AOD-9604",
+  "category": "metabolic-research",
+  "purity": "\u2265 98.9%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a dried thistle head on its stem",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "kisspeptin",
+  "name": "Kisspeptin",
+  "category": "peptide-research",
+  "purity": "\u2265 98.8%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a cherry blossom twig with a few pink flowers",
+  "orientation": "diagonally"
+ },
+ {
+  "slug": "pt-141",
+  "name": "PT-141",
+  "category": "peptide-research",
+  "purity": "\u2265 98.9%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a dried protea flower head on its stem",
+  "orientation": "vertically"
+ },
+ {
+  "slug": "slu-pp-332",
+  "name": "SLU-PP-332",
+  "category": "metabolic-research",
+  "purity": "\u2265 98.5%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a single pinecone",
+  "orientation": "flat"
+ },
+ {
+  "slug": "adamax",
+  "name": "ADAMAX",
+  "category": "peptide-research",
+  "purity": "\u2265 98.7%",
+  "dose": "10 mg",
+  "doses": [
+   "10 mg"
+  ],
+  "plant": "a twisted piece of grey driftwood root",
+  "orientation": "horizontally"
+ }
+]
