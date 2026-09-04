@@ -15,12 +15,15 @@ for p in prods:
     have[s]['main']=web(f'{ROOT}/img/products/{s}-main.jpg',f'{W}/{s}-main.jpg',1000)
     have[s]['cube']=web(f'{ROOT}/img/products/{s}-cube.jpg',f'{W}/{s}-cube.jpg',1000)
     have[s]['plant']=web(f'{ROOT}/img/products/{s}-plant.png',f'{W}/{s}-plant.jpg',1000)
+    have[s]['float']=web(f'{ROOT}/img/products/{s}-float.jpg',f'{W}/{s}-float.jpg',1000)
+    have[s]['water']=web(f'{ROOT}/img/products/{s}-water.jpg',f'{W}/{s}-water.jpg',1400)
 # the gallery page
 rows=[]
 for p in prods:
     s=p['slug']; name=p['name'].replace('MRDN-','M-'); h=have[s]
     cells=''
-    for k,label,ext in [('main','Main','jpg'),('plant','Ecophilia','png'),('cube','With the cube','jpg')]:
+    for k,label,ext in [('main','Main','jpg'),('float','Floating','jpg'),('water','In the water','jpg'),('plant','Ecophilia','png'),('cube','With the cube','jpg')]:
+        if k in ('float','water','cube') and s=='kubix': continue
         if h[k]:
             cells+=f'<a class="shot" href="../img/products/{s}-{k}.{ext}" download><img loading="lazy" src="../img/products/web/{s}-{k}.jpg" alt="{name} — {label}"><span>{label} · download</span></a>'
         else:
@@ -42,7 +45,8 @@ header a{{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.
 section{{background:var(--paper);border:1px solid var(--line);padding:22px 26px 26px;margin-bottom:14px}}
 section h2{{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:baseline;gap:12px}}
 section h2 i{{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--mid)}}
-.shots{{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}}
+.shots{{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}}
+@media (max-width:1100px){{.shots{{grid-template-columns:repeat(2,1fr)}}}}
 .shot{{position:relative;display:block;aspect-ratio:4/3;background:var(--vanilla);overflow:hidden;text-decoration:none;color:inherit}}
 .shot img{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}}
 .shot span{{position:absolute;left:10px;bottom:8px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--ink);background:rgba(251,246,238,.85);padding:3px 6px}}
@@ -50,7 +54,7 @@ section h2 i{{font-style:normal;font-family:'JetBrains Mono',monospace;font-size
 .shot.pending span{{color:var(--mid)}}
 @media (max-width:800px){{.shots{{grid-template-columns:1fr}}header{{padding:26px 22px}}}}
 </style></head><body><div class="wrap">
-<header><div><h1>Products</h1><p>Every offering, three ways: the main shot on the shadow master, its Ecophilia page on its own plant, and the vial beside the cube. Names and doses are composited from one master, so every product carries the same light. Click any plate to download the full-size file.</p></div><a href="../">&larr; BRAND BOOK</a></header>
+<header><div><h1>Products</h1><p>Every offering, five ways: the main shot on the shadow master, the floating vial, the vial standing in the water, its Ecophilia page on its own plant, and the vial beside the cube. Names and doses are composited from one master, so every product carries the same light. Click any plate to download the full-size file.</p></div><a href="../">&larr; BRAND BOOK</a></header>
 {''.join(rows)}
 </div></body></html>'''
 os.makedirs(os.path.join(ROOT,'products'),exist_ok=True); open(os.path.join(ROOT,'products/index.html'),'w').write(html)
@@ -62,3 +66,10 @@ import re
 tiles=''.join(f'<a class="tile" style="background:#44B24B" href="products/#{p["slug"]}"><img class="fill" src="img/products/web/{p["slug"]}-plant.jpg" alt="{p["name"]} on its plant"></a>' for p in prods if have[p['slug']]['plant'])
 h2=re.sub(r'(<div class="tiles" id="plantgrid"[^>]*>).*?(</div>)', lambda m: m.group(1)+tiles+m.group(2), h, flags=re.S)
 open(idx,'w').write(h2); print('plant grid:', sum(1 for p in prods if have[p['slug']]['plant']), 'tiles')
+
+GH='https://jack-more.github.io/meridian-brandbook/img/products/'
+car={}
+for p in prods:
+    s_=p['slug']; order=[('main','jpg'),('float','jpg'),('water','jpg'),('plant','png'),('cube','jpg')]
+    car[s_]={'name':p['name'],'images':[f'{GH}web/{s_}-{k}.jpg' for k,ext in order if have[s_].get(k)]}
+json.dump(car,open(os.path.join(ROOT,'products/carousel.json'),'w'),indent=1); print('carousel.json', len(car))

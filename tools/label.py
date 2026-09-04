@@ -24,6 +24,8 @@ MASTERS = {
                    name_v=130, dose_v=216, name_px=118, dose_px=60, u0=22),
     'cube':   dict(src='img/gen/master-cube-1.png',   origin=(750, 899),  angle=17.7, width=400,
                    name_v=80,  dose_v=133, name_px=72, dose_px=37, u0=14, two_line_drop=20),
+    'water':  dict(src='img/gen/master-water-2.png',  origin=(1267, 746), angle=-3.1, width=212,
+                   name_v=40,  dose_v=69,  name_px=36, dose_px=19, u0=6, two_line_drop=10),
 }
 
 def font(path, px, wt=None):
@@ -80,6 +82,8 @@ if __name__ == '__main__':
     for p in prods:
         if p['slug'] not in which: continue
         name = p['name'].replace('MRDN-', 'M-')
-        render('shadow', name, p['dose'], os.path.join(ROOT, f"img/products/{p['slug']}-main.jpg"))
-        render('cube',   name, p['dose'], os.path.join(ROOT, f"img/products/{p['slug']}-cube.jpg"))
+        for master, tag in [('shadow', 'main'), ('cube', 'cube'), ('blank', 'float'), ('water', 'water')]:
+            if master not in MASTERS or (tag != 'main' and p['slug'] == 'kubix'): continue
+            if os.environ.get('ONLY') and tag not in os.environ['ONLY'].split(','): continue
+            render(master, name, p['dose'], os.path.join(ROOT, f"img/products/{p['slug']}-{tag}.jpg"))
         print('wrote', p['slug'], '→', name, p['dose'])
