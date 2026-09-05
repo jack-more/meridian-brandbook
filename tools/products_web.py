@@ -25,8 +25,10 @@ for p in prods:
     have[s]['main']=web(mp if os.path.exists(mp) else f'{ROOT}/img/products/{s}-main.jpg',f'{W}/{s}-main.jpg',1000)
     have[s]['cube']=web(cp if os.path.exists(cp) else f'{ROOT}/img/products/{s}-cube.jpg',f'{W}/{s}-cube.jpg',1000)
     have[s]['plant']=web(f'{ROOT}/img/products/{s}-plant.png',f'{W}/{s}-plant.jpg',1000)
-    have[s]['square']=web(f'{ROOT}/img/products/{s}-square.jpg',f'{W}/{s}-square.jpg',1200)
-    for k in ['main','square','cube','plant','float','water']: full(s,k)
+    sq=f'{ROOT}/img/products/{s}-square.png'
+    have[s]['square']=web(sq if os.path.exists(sq) else f'{ROOT}/img/products/{s}-square.jpg',f'{W}/{s}-square.jpg',1200)
+    have[s]['moss']=web(f'{ROOT}/img/products/{s}-moss.png',f'{W}/{s}-moss.jpg',1400)
+    for k in ['main','square','cube','plant','float','water','moss']: full(s,k)
     have[s]['float']=web(f'{ROOT}/img/products/{s}-float.png',f'{W}/{s}-float.jpg',1000)
     have[s]['water']=web(f'{ROOT}/img/products/{s}-water.png',f'{W}/{s}-water.jpg',1400)
 # the gallery page
@@ -34,8 +36,8 @@ rows=[]
 for p in prods:
     s=p['slug']; name=p['name'].replace('MRDN-','M-'); h=have[s]
     cells=''
-    for k,label,ext in [('square','Main · 1:1','jpg'),('main','Main · 3:4','jpg'),('float','Floating','png'),('water','In the water','png'),('plant','Ecophilia','png'),('cube','With the cube','jpg')]:
-        if k in ('float','water','cube') and s=='kubix': continue
+    for k,label,ext in [('square','Main · 1:1','jpg'),('main','Main · 3:4','jpg'),('float','Floating','png'),('water','In the water','png'),('moss','On the moss','png'),('plant','Ecophilia','png'),('cube','With the cube','jpg')]:
+        if k in ('float','water','cube','moss') and s=='kubix': continue
         if h[k]:
             cells+=f'<a class="shot" href="../img/products/full/{s}-{k}.jpg" download><img loading="lazy" src="../img/products/web/{s}-{k}.jpg" alt="{name} — {label}"><span>{label} · download</span></a>'
         else:
@@ -57,7 +59,7 @@ header a{{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.
 section{{background:var(--paper);border:1px solid var(--line);padding:22px 26px 26px;margin-bottom:14px}}
 section h2{{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:baseline;gap:12px}}
 section h2 i{{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--mid)}}
-.shots{{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}}
+.shots{{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}}
 @media (max-width:1100px){{.shots{{grid-template-columns:repeat(2,1fr)}}}}
 .shot{{position:relative;display:block;aspect-ratio:4/3;background:var(--vanilla);overflow:hidden;text-decoration:none;color:inherit}}
 .shot img{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}}
@@ -66,7 +68,7 @@ section h2 i{{font-style:normal;font-family:'JetBrains Mono',monospace;font-size
 .shot.pending span{{color:var(--mid)}}
 @media (max-width:800px){{.shots{{grid-template-columns:1fr}}header{{padding:26px 22px}}}}
 </style></head><body><div class="wrap">
-<header><div><h1>Products</h1><p>Every offering, six ways: the main shot on the shadow master, square and 3:4, the floating vial, the vial standing in the water, its Ecophilia page on its own plant, and the vial beside the cube. Names and doses are composited from one master, so every product carries the same light. Click any plate to download it at 2000 px.</p></div><a href="../">&larr; BRAND BOOK</a></header>
+<header><div><h1>Products</h1><p>Every offering, seven ways: the main shot on the shadow master, square and 3:4, on the moss branch, the floating vial, the vial standing in the water, its Ecophilia page on its own plant, and the vial beside the cube. Names and doses are composited from one master, so every product carries the same light. Click any plate to download it at 2000 px.</p></div><a href="../">&larr; BRAND BOOK</a></header>
 {''.join(rows)}
 </div></body></html>'''
 os.makedirs(os.path.join(ROOT,'products'),exist_ok=True); open(os.path.join(ROOT,'products/index.html'),'w').write(html)
@@ -82,6 +84,6 @@ open(idx,'w').write(h2); print('plant grid:', sum(1 for p in prods if have[p['sl
 GH='https://jack-more.github.io/meridian-brandbook/img/products/'
 car={}
 for p in prods:
-    s_=p['slug']; order=[('square','jpg'),('float','jpg'),('water','jpg'),('plant','png'),('cube','jpg')]
+    s_=p['slug']; order=[('square','jpg'),('float','jpg'),('water','jpg'),('moss','png'),('plant','png'),('cube','jpg')]
     car[s_]={'name':p['name'],'images':[f'{GH}web/{s_}-{k}.jpg' for k,ext in order if have[s_].get(k)]}
 json.dump(car,open(os.path.join(ROOT,'products/carousel.json'),'w'),indent=1); print('carousel.json', len(car))
