@@ -85,5 +85,8 @@ GH='https://jack-more.github.io/meridian-brandbook/img/products/'
 car={}
 for p in prods:
     s_=p['slug']; order=[('square','jpg'),('float','jpg'),('water','jpg'),('moss','png'),('plant','png'),('cube','jpg')]
-    car[s_]={'name':p['name'],'images':[f'{GH}web/{s_}-{k}.jpg' for k,ext in order if have[s_].get(k)]}
+    import hashlib
+    def v(k):
+        with open(f'{W}/{s_}-{k}.jpg','rb') as fh: return hashlib.md5(fh.read()).hexdigest()[:8]
+    car[s_]={'name':p['name'],'images':[f'{GH}web/{s_}-{k}.jpg?v={v(k)}' for k,ext in order if have[s_].get(k)]}
 json.dump(car,open(os.path.join(ROOT,'products/carousel.json'),'w'),indent=1); print('carousel.json', len(car))
