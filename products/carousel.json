@@ -390,5 +390,16 @@
    "https://jack-more.github.io/meridian-brandbook/img/products/web/adamax-plant.jpg?v=ad82aa3f",
    "https://jack-more.github.io/meridian-brandbook/img/products/web/adamax-cube.jpg?v=0cc7424d"
   ]
+ },
+ "bacteriostatic-water": {
+  "name": "Bacteriostatic Water",
+  "images": [
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bacteriostatic-water-square.jpg?v=f900c4f5",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bacteriostatic-water-float.jpg?v=992bc7f8",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bacteriostatic-water-water.jpg?v=ebfc29f0",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bacteriostatic-water-moss.jpg?v=3b084f82",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bacteriostatic-water-plant.jpg?v=84bf868c",
+   "https://jack-more.github.io/meridian-brandbook/img/products/web/bacteriostatic-water-cube.jpg?v=da3539d5"
+  ]
  }
 }

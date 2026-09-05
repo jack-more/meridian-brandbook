@@ -473,5 +473,20 @@
   "plant": "a tangle of grey driftwood roots",
   "orientation": "flat",
   "pose": "lie"
+ },
+ {
+  "slug": "bacteriostatic-water",
+  "name": "Bacteriostatic Water",
+  "category": "supplies",
+  "purity": "0.9% Benzyl Alcohol",
+  "dose": "10 mL",
+  "doses": [
+   "10 mL"
+  ],
+  "plant": "a large cupped lotus leaf holding a few beads of water",
+  "orientation": "diagonally",
+  "pose": "lie",
+  "line": "0.9% Benzyl Alcohol and Research Use Only",
+  "vial": "a taller 10 mL vial of the same design, the same diameter but about half again as tall, same cap and band"
  }
 ]

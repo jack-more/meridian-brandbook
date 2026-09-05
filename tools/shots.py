@@ -8,7 +8,7 @@ LABEL=os.path.join(ROOT,'img/ref/label-m3rt.png'); WATER=os.path.join(ROOT,'img/
 SHADOW=os.path.join(ROOT,'img/gen/master-shadow-1.png'); CUBE=os.path.join(ROOT,'img/gen/master-cube-1.png'); MOSS=os.path.join(ROOT,'img/gen/hero-moss-2.png')
 OUT=os.path.join(ROOT,'img/products')
 prods=[p for p in json.load(open(os.path.join(ROOT,'products.json'))) if p['slug']!='kubix']
-def label(name,dose): return (f"the lowercase serif wordmark meridian in forest green, a thin rule, then {name} in bold sans, {dose} beneath it, a second rule, 99% Purity and Research Use Only, and the small green M badge in the corner; every letter of the name fully visible")
+def label(name,dose,line='99% Purity and Research Use Only'): return (f"the lowercase serif wordmark meridian in forest green, a thin rule, then {name} in bold sans, {dose} beneath it, a second rule, {line}, and the small green M badge in the corner; every letter of the name fully visible")
 def gen(args,out):
     for attempt in range(2):
         r=subprocess.run(['higgsfield','generate','create','nano_banana_2']+args+['--wait'],capture_output=True,text=True,timeout=600)
@@ -19,29 +19,31 @@ def gen(args,out):
     return 'FAILED: '+(r.stdout+r.stderr)[-160:]
 def one(job):
     p,kind=job; name=p['name'].replace('MRDN-','M-'); dose=p['dose']
+    L=lambda: label(name,dose,p.get('line','99% Purity and Research Use Only'))+(('. The vial itself is '+p['vial']) if p.get('vial') else '')
     out=os.path.join(OUT,f"{p['slug']}-{kind}.png")
     if os.path.exists(out): return p['slug'],kind,'exists'
     if kind=='float':
-        prompt=(f"Reproduce the reference exactly: the same clear glass vial at the same tilt, the same warm vanilla cap over a silver band, the same soft warm studio background and lighting. The label is exactly the reference label design with one change, the product name and dose: {label(name,dose)}. Ultra sharp, no other text.")
+        prompt=(f"Reproduce the reference exactly: the same clear glass vial at the same tilt, the same warm vanilla cap over a silver band, the same soft warm studio background and lighting. The label is exactly the reference label design with one change, the product name and dose: {L()}. Ultra sharp, no other text.")
         args=['--image',LABEL,'--aspect_ratio','2:3','--prompt',prompt]
     elif kind=='square':
         mainref=os.path.join(OUT,f"{p['slug']}-main.png")
-        prompt=(f"Reproduce the first reference exactly, reframed as a square: the same clear glass vial at the same tilt with the same label, cap, surface, light and contact shadow, now centred in a 1:1 frame with generous room around it on every side so the whole vial including the cap and the shadow sits well inside the frame. The label reads exactly as in the reference: {label(name,dose)}. Ultra sharp, product-render precision, no other text.")
+        prompt=(f"Reproduce the first reference exactly, reframed as a square: the same clear glass vial at the same tilt with the same label, cap, surface, light and contact shadow, now centred in a 1:1 frame with generous room around it on every side so the whole vial including the cap and the shadow sits well inside the frame. The label reads exactly as in the reference: {L()}. Ultra sharp, product-render precision, no other text.")
         args=['--image',mainref,'--image',LABEL,'--aspect_ratio','1:1','--prompt',prompt]
     elif kind=='moss':
-        prompt=(f"Reproduce the first reference exactly: the same moss-covered branch lying across the frame on the same flat warm vanilla background, the same soft light, and the same clear glass vial standing upright on the moss with the same cap and the same shadow. The label is exactly the second reference's label design with one change, the product name and dose: {label(name,dose)}. Ultra sharp, product-render precision, no other text.")
+        prompt=(f"Reproduce the first reference exactly: the same moss-covered branch lying across the frame on the same flat warm vanilla background, the same soft light, and the same clear glass vial standing upright on the moss with the same cap and the same shadow. The label is exactly the second reference's label design with one change, the product name and dose: {L()}. Ultra sharp, product-render precision, no other text.")
         args=['--image',MOSS,'--image',LABEL,'--aspect_ratio','16:9','--prompt',prompt]
     elif kind=='main':
-        prompt=(f"Reproduce the first reference exactly: the same clear glass vial standing upright with the same slight tilt, the same warm vanilla cap over a silver band, the same flat warm vanilla surface and seamless background, the same soft light and the same soft contact shadow. The label is exactly the second reference's label design with one change, the product name and dose: {label(name,dose)}. Ultra sharp, product-render precision, no other text.")
+        prompt=(f"Reproduce the first reference exactly: the same clear glass vial standing upright with the same slight tilt, the same warm vanilla cap over a silver band, the same flat warm vanilla surface and seamless background, the same soft light and the same soft contact shadow. The label is exactly the second reference's label design with one change, the product name and dose: {L()}. Ultra sharp, product-render precision, no other text.")
         args=['--image',SHADOW,'--image',LABEL,'--aspect_ratio','3:4','--prompt',prompt]
     elif kind=='cube':
-        prompt=(f"Reproduce the first reference exactly: the same clear glass vial standing left of centre, the same small warm vanilla cube with the lowercase serif m pressed into it resting to the right, the same flat warm vanilla surface, seamless background, soft light and contact shadows. The vial's label is exactly the second reference's label design with one change, the product name and dose: {label(name,dose)}. Ultra sharp, product-render precision, no other text.")
+        prompt=(f"Reproduce the first reference exactly: the same clear glass vial standing left of centre, the same small warm vanilla cube with the lowercase serif m pressed into it resting to the right, the same flat warm vanilla surface, seamless background, soft light and contact shadows. The vial's label is exactly the second reference's label design with one change, the product name and dose: {L()}. Ultra sharp, product-render precision, no other text.")
         args=['--image',CUBE,'--image',LABEL,'--aspect_ratio','4:3','--prompt',prompt]
     else:
-        prompt=(f"Reproduce the first reference exactly: the same still pond seen from above, the same warm pale vanilla water, the same concentric ripples, the same vial standing upright at the centre, the same lighting and reflection. The label is exactly the second reference's label design with one change, the product name and dose: {label(name,dose)}. Ultra sharp, no other text.")
+        prompt=(f"Reproduce the first reference exactly: the same still pond seen from above, the same warm pale vanilla water, the same concentric ripples, the same vial standing upright at the centre, the same lighting and reflection. The label is exactly the second reference's label design with one change, the product name and dose: {L()}. Ultra sharp, no other text.")
         args=['--image',WATER,'--image',LABEL,'--aspect_ratio','16:9','--prompt',prompt]
     return p['slug'],kind,gen(args,out)
 kinds=sys.argv[1:] or ['float','water']
+only=os.environ.get('ONLY'); prods=[p for p in prods if not only or p['slug'] in only.split(',')]
 jobs=[(p,k) for k in kinds for p in prods]
 with ThreadPoolExecutor(int(os.environ.get('PAR','5'))) as ex:
     for slug,kind,st in ex.map(one,jobs): print(slug,kind,st,flush=True)

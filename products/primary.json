@@ -142,5 +142,9 @@
  "adamax": {
   "name": "ADAMAX",
   "image": "https://jack-more.github.io/meridian-brandbook/img/products/web/adamax-square.jpg?v=b8e13285"
+ },
+ "bacteriostatic-water": {
+  "name": "Bacteriostatic Water",
+  "image": "https://jack-more.github.io/meridian-brandbook/img/products/web/bacteriostatic-water-square.jpg?v=f900c4f5"
  }
 }
