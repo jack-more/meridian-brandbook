@@ -84,7 +84,7 @@ open(idx,'w').write(h2); print('plant grid:', sum(1 for p in prods if have[p['sl
 GH='https://jack-more.github.io/meridian-brandbook/img/products/'
 car={}
 for p in prods:
-    s_=p['slug']; order=[('square','jpg'),('float','jpg'),('water','jpg'),('moss','png'),('plant','png'),('cube','jpg')]
+    s_=p['slug']; order=[('square','jpg'),('float','jpg'),('water','jpg'),('moss','png'),('cube','jpg'),('plant','png')]
     import hashlib
     def v(k):
         with open(f'{W}/{s_}-{k}.jpg','rb') as fh: return hashlib.md5(fh.read()).hexdigest()[:8]

@@ -24,9 +24,9 @@
   "doses": [
    "15 mg"
   ],
-  "plant": "a curled sheet of silver birch bark",
-  "orientation": "diagonally",
-  "pose": "stand"
+  "plant": "a loose bunch of fresh sage, soft velvety grey-green leaves",
+  "orientation": "flat",
+  "pose": "lie"
  },
  {
   "slug": "tesamorelin",
@@ -37,9 +37,9 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a real cut tree branch with grey-brown bark and one sawn end",
-  "orientation": "diagonally",
-  "pose": "stand"
+  "plant": "the dense flat foliage pad of a juniper bonsai, tight scaly green sprays layered thick",
+  "orientation": "horizontally",
+  "pose": "lie"
  },
  {
   "slug": "ghk-cu",
@@ -51,7 +51,7 @@
    "50 mg",
    "100 mg"
   ],
-  "plant": "a loose pile of dried copper-brown magnolia leaves",
+  "plant": "one large fully open garden rose in apricot-copper, with a few dark green leaves",
   "orientation": "flat",
   "pose": "lie"
  },
@@ -77,8 +77,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a cluster of layered green fern fronds",
-  "orientation": "flat",
+  "plant": "one large fresh fern frond, lush and green, its pinnae fanning out",
+  "orientation": "diagonally",
   "pose": "lie"
  },
  {
@@ -90,7 +90,7 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a tangle of grapevine with curling tendrils",
+  "plant": "a dense cluster of fresh mint sprigs, bright green crinkled leaves",
   "orientation": "flat",
   "pose": "lie"
  },
@@ -116,8 +116,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a bed of dry pine needles with two small cones",
-  "orientation": "flat",
+  "plant": "a thick fresh pine bough with dense green needles and one small cone",
+  "orientation": "diagonally",
   "pose": "lie"
  },
  {
@@ -195,7 +195,7 @@
   "doses": [
    "1 mg"
   ],
-  "plant": "a bundle of green bamboo culms tied together",
+  "plant": "several fresh green bamboo culms with sprays of narrow bamboo leaves, loose, not tied",
   "orientation": "horizontally",
   "pose": "lie"
  },
@@ -287,8 +287,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "the crook of a forked willow branch",
-  "orientation": "horizontally",
+  "plant": "a dense mound of fresh English ivy, glossy dark leaves and trailing stems",
+  "orientation": "flat",
   "pose": "lie"
  },
  {
@@ -300,8 +300,8 @@
   "doses": [
    "10 mg"
   ],
-  "plant": "a log end with a hollow knot",
-  "orientation": "flat",
+  "plant": "a cluster of thick fresh aloe vera leaves, plump and spiky-edged",
+  "orientation": "diagonally",
   "pose": "lie"
  },
  {
